@@ -6,19 +6,24 @@ let numeroMaximo = 10;
 function verificarIntento() {
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
 
+function verificarIntento() {
+    let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
+
+    intentos++;  // Incrementa intentos antes de la verificación
+
     if (numeroDeUsuario === numeroSecreto) {
-        asignarTextoElemento('p', `Adivinaste el número en ${intentos} ${intentos === 1 ? 'intento' : 'intentos' }`);
+        asignarTextoElemento('p', `Adivinaste el número en ${intentos} ${intentos === 1 ? 'intento' : 'intentos'}`);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
-         if (numeroDeUsuario > numeroSecreto) {
-            asignarTextoElemento('p', 'El número secreto es menor')
+        if (numeroDeUsuario > numeroSecreto) {
+            asignarTextoElemento('p', 'El número secreto es menor');
         } else {
-            //usuario no acerto
             asignarTextoElemento('p', 'El número secreto es mayor');
         }
-        intentos++;
         limpiarCaja();
     }
+}
+
     return;
 }
 
