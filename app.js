@@ -62,8 +62,8 @@ function condicionesIniciales(){
     asignarTextoElemento('p', `Escoje un número del 1 al ${numeroMaximo}`);
     numeroSecreto = generarNumeroSecreto();
     intentos = 0;
-
 }
+
 
 condicionesIniciales();
 
